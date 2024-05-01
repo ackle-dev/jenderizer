@@ -40,9 +40,9 @@ export default function App() {
 
 	return (
 		<RootLayout>
-			<main className="flex flex-col items-stretch justify-normal min-h-screen m-0 px-12 py-16 md:p-16 lg:p-32 text-center font-mono tracking-widest">
-				<Toaster position="top-right" />
-				<h1 className="text-center m-4 font-semibold sm:text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-purple to-purple-light">
+			<main className='flex flex-col items-stretch justify-normal min-h-screen m-0 px-12 py-16 md:p-16 lg:p-32 text-center font-mono tracking-widest'>
+				<Toaster position='top-right' />
+				<h1 className='text-center m-4 font-semibold sm:text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-purple to-purple-light'>
 					Jenderize!
 				</h1>
 				<div
@@ -55,29 +55,30 @@ export default function App() {
 						<Input
 							isRequired
 							isClearable
-							variant="underlined"
-							label="Name"
-							size="lg"
+							variant='underlined'
+							label='Name'
+							size='lg'
 							value={value}
 							onValueChange={setValue}
-							className="max-w-xl"
+							className='max-w-xl'
 						/>
-						<div className="flex flex-row items-center justify-center gap-4 md:gap-8">
+						<div className='flex flex-row items-center justify-center gap-4 md:gap-8'>
 							<Button
 								onPress={submit}
-								size="lg"
-								color="success"
-								className="text-background"
-								type="submit"
+								size='lg'
+								color='success'
+								className='text-background'
+								type='submit'
 							>
 								Roll
 							</Button>
 							OR
 							<Button
 								onPress={random}
-								size="lg"
-								color="secondary"
-								className="text-background"
+								size='lg'
+								color='secondary'
+								className='text-background'
+								// @ts-expect-error
 								endContent={<FontAwesomeIcon icon={faDice} />}
 							>
 								Random
@@ -88,29 +89,31 @@ export default function App() {
 				<div
 					className={`${name ? 'flex' : 'hidden'} flex-col justify-center items-center gap-2 md:gap-4 dark:text-foreground text-center text-xl font-mono tracking-widest`}
 				>
-					<h2 className="font-semibold text-2xl md:text-4xl overflow-x-scroll max-w-[calc(100vw-6rem)]">
+					<h2 className='font-semibold text-2xl md:text-4xl overflow-x-scroll max-w-[calc(100vw-6rem)]'>
 						{rand ? 'Random' : `${name!}'s`} gender:
 					</h2>
-					<p className="m-8 text-xl md:text-2xl font-semibold rounded-2xl py-2 px-4 bg-neutral-500">{`${GetResponse(name ?? '')}`}</p>
-					<Divider className="my-4 mx-2 h-1" />
-					<div className="flex flex-row justify-center items-center gap-4 md:gap-8">
+					<p className='m-8 text-xl md:text-2xl font-semibold rounded-2xl py-2 px-4 bg-neutral-500'>{`${GetResponse(name ?? '')}`}</p>
+					<Divider className='my-4 mx-2 h-1' />
+					<div className='flex flex-row justify-center items-center gap-4 md:gap-8'>
 						<Button
 							onPress={() => {
 								window.navigator.clipboard.writeText(GetResponse(name!));
 								toast.success('Copied to clipboard!');
 							}}
-							size="lg"
-							color="primary"
-							className="text-background"
+							size='lg'
+							color='primary'
+							className='text-background'
+							// @ts-expect-error
 							endContent={<FontAwesomeIcon icon={faCopy} />}
 						>
 							Copy
 						</Button>
 						<Button
 							onPress={() => window.location.reload()}
-							size="lg"
-							color="success"
+							size='lg'
+							color='success'
 							className={`text-background ${rand ? '' : 'hidden'}`}
+							// @ts-expect-error
 							endContent={<FontAwesomeIcon icon={faDice} />}
 						>
 							Roll again
@@ -122,188 +125,217 @@ export default function App() {
 							window.location.origin
 						).toString()}
 						isBlock
-						color="primary"
-						underline="always"
+						color='primary'
+						underline='always'
 					>
 						Go back
 					</Link>
 				</div>
-				<Divider className="my-12 mx-2 h-1" />
-				<p className="text-xl my-2 text-center leading-loose">
+				<Divider className='my-12 mx-2 h-1' />
+				<p className='text-xl my-2 text-center leading-loose'>
 					Developed by{' '}
-					<Link href="https://akpi.is-a.dev/" size="lg" underline="always">
+					<Link href='https://akpi.is-a.dev/' size='lg' underline='always'>
 						Akhil Pillai
 					</Link>
 					.<br />
 					This project was inspired by{' '}
 					<Link
 						isExternal
-						href="https://definitelytransrpgideas.tumblr.com/post/162501281810/are-you-a-boy-or-a-girl-rolls-d20-and-checks"
+						href='https://definitelytransrpgideas.tumblr.com/post/162501281810/are-you-a-boy-or-a-girl-rolls-d20-and-checks'
 					>
 						this great Tumblr post
 					</Link>
 					.
 				</p>
-				<div className="flex flex-row justify-center items-middle my-2 md:my-4">
+				<div className='flex flex-row justify-center items-middle my-2 md:my-4'>
 					<Button
 						onPress={open}
-						size="lg"
-						color="primary"
-						className="text-background font-semibold"
+						size='lg'
+						color='primary'
+						className='text-background font-semibold'
 					>
 						Credits
 					</Button>
 				</div>
 			</main>
 			<Modal
-				title="Credits"
+				title='Credits'
 				isOpen={isOpen}
 				onOpenChange={openChange}
-				placement="center"
-				scrollBehavior="inside"
-				size="2xl"
+				placement='center'
+				scrollBehavior='inside'
+				size='2xl'
+				motionProps={{
+					variants: {
+						enter: {
+							y: 0,
+							opacity: 1,
+							transition: {
+								duration: 0.3,
+								ease: 'easeOut'
+							}
+						},
+						exit: {
+							y: -20,
+							opacity: 0,
+							transition: {
+								duration: 0.2,
+								ease: 'easeIn'
+							}
+						}
+					}
+				}}
 			>
 				<ModalContent>
-					{close => <>
-						<ModalHeader>Credits</ModalHeader>
-						<ModalBody>
-							<div className="flex flex-col gap-4">
-								<p className="mb-4">
-									Jender is a webapp which randomly serves up odd responses to
-									questions about gender.<br /><br />It's even funnier when the results are
-									used to answer common everyday questions!<br /><br />The source code is
-									available on{' '}
-									<Link
-										href="https://github.com/akpi816218/jender"
-										target="_blank"
-										underline="always"
-										isExternal
+					{close => (
+						<>
+							<ModalHeader>Credits</ModalHeader>
+							<ModalBody>
+								<div className='flex flex-col gap-4'>
+									<p className='mb-4'>
+										Jender is a webapp which randomly serves up odd responses to
+										questions about gender.
+										<br />
+										<br />
+										It's even funnier when the results are used to answer common
+										everyday questions!
+										<br />
+										<br />
+										The source code is available on{' '}
+										<Link
+											href='https://github.com/akpi816218/jender'
+											target='_blank'
+											underline='always'
+											isExternal
+										>
+											GitHub
+										</Link>
+										.
+										<br />
+										<br />
+										Developed by{' '}
+										<Link
+											href='https://akpi.is-a.dev/'
+											target='_blank'
+											underline='always'
+											isExternal
+										>
+											Akhil Pillai
+										</Link>
+										.
+										<br />
+										<br />
+										This project was inspired by{' '}
+										<Link
+											isExternal
+											href='https://definitelytransrpgideas.tumblr.com/post/162501281810/are-you-a-boy-or-a-girl-rolls-d20-and-checks'
+										>
+											this great Tumblr post
+										</Link>
+										.
+									</p>
+									<h2 className='text-center text-lg font-semibold font-press-start text-indigo-600 underline underline-offset-2'>
+										Open Source Tools and Libraries
+									</h2>
+									<Table
+										isStriped
+										classNames={{
+											wrapper: 'border-neutral-500 border-2'
+										}}
 									>
-										GitHub
-									</Link>
-									.
-									<br />
-									<br />
-									Developed by{' '}
-									<Link
-										href="https://akpi.is-a.dev/"
-										target="_blank"
-										underline="always"
-										isExternal
-									>
-										Akhil Pillai
-									</Link>
-									.
-<br /><br />This project was inspired by{' '}
-					<Link
-						isExternal
-						href="https://definitelytransrpgideas.tumblr.com/post/162501281810/are-you-a-boy-or-a-girl-rolls-d20-and-checks"
-					>
-						this great Tumblr post
-					</Link>
-					.
-								</p>
-								<h2 className="text-center text-lg font-semibold font-press-start text-indigo-600 underline underline-offset-2">
-									Open Source Tools and Libraries
-								</h2>
-								<Table
-									isStriped
-									classNames={{
-										wrapper: 'border-neutral-500 border-2'
-									}}
-								>
-									<TableHeader>
-										<TableColumn>Name</TableColumn>
-										<TableColumn>License</TableColumn>
-										<TableColumn>GitHub</TableColumn>
-									</TableHeader>
-									<TableBody
-										items={[
-											{
-												name: 'ESLint',
-												license: 'MIT',
-												github: 'eslint/eslint'
-											},
-											{
-												name: 'eslint-plugin-react',
-												license: 'MIT',
-												github: 'jsx-eslint/eslint-plugin-react',
-												isMono: true
-											},
-											{
-												name: 'Font Awesome',
-												license: 'MIT',
-												github: 'FortAwesome/react-fontawesome'
-											},
-											{
-												name: 'NextUI',
-												license: 'MIT',
-												github: 'nextui-org/nextui'
-											},
-											{
-												name: 'Prettier',
-												license: 'MIT',
-												github: 'prettier/prettier'
-											},
-											{
-												name: 'Puppeteer',
-												license: 'Apache-2.0',
-												github: 'puppeteer/puppeteer'
-											},
-											{
-												name: 'pwa-asset-generator',
-												license: 'MIT',
-												github: 'elegantapp/pwa-asset-generator',
-												isMono: true
-											},
-											{
-												name: 'React',
-												license: 'MIT',
-												github: 'facebook/react'
-											},
-											{
-												name: 'Tailwind CSS',
-												license: 'MIT',
-												github: 'tailwindlabs/tailwindcss'
-											},
-											{
-												name: 'Vite',
-												license: 'MIT',
-												github: 'vitejs/vite'
-											},
-											{
-												name: 'vite-plugin-react',
-												license: 'MIT',
-												github: 'vitejs/vite-plugin-react',
-												isMono: true
-											}
-										]}
-									>
-										{item => (
-											<TableRow key={item.name}>
-												<TableCell>{item.name}</TableCell>
-												<TableCell>{item.license}</TableCell>
-												<TableCell>
-													<Link
-														href={`https://github.com/${item.github}`}
-														target="_blank"
-														isExternal
-													>
-														{item.github}
-													</Link>
-												</TableCell>
-											</TableRow>
-										)}
-									</TableBody>
-								</Table>
-							</div>
-						</ModalBody>
-						<ModalFooter>
-							<Button onPress={close} color="warning">
-								Close
-							</Button>
-						</ModalFooter>
-					</> }
+										<TableHeader>
+											<TableColumn>Name</TableColumn>
+											<TableColumn>License</TableColumn>
+											<TableColumn>GitHub</TableColumn>
+										</TableHeader>
+										<TableBody
+											items={[
+												{
+													name: 'ESLint',
+													license: 'MIT',
+													github: 'eslint/eslint'
+												},
+												{
+													name: 'eslint-plugin-react',
+													license: 'MIT',
+													github: 'jsx-eslint/eslint-plugin-react',
+													isMono: true
+												},
+												{
+													name: 'Font Awesome',
+													license: 'MIT',
+													github: 'FortAwesome/react-fontawesome'
+												},
+												{
+													name: 'NextUI',
+													license: 'MIT',
+													github: 'nextui-org/nextui'
+												},
+												{
+													name: 'Prettier',
+													license: 'MIT',
+													github: 'prettier/prettier'
+												},
+												{
+													name: 'Puppeteer',
+													license: 'Apache-2.0',
+													github: 'puppeteer/puppeteer'
+												},
+												{
+													name: 'pwa-asset-generator',
+													license: 'MIT',
+													github: 'elegantapp/pwa-asset-generator',
+													isMono: true
+												},
+												{
+													name: 'React',
+													license: 'MIT',
+													github: 'facebook/react'
+												},
+												{
+													name: 'Tailwind CSS',
+													license: 'MIT',
+													github: 'tailwindlabs/tailwindcss'
+												},
+												{
+													name: 'Vite',
+													license: 'MIT',
+													github: 'vitejs/vite'
+												},
+												{
+													name: 'vite-plugin-react',
+													license: 'MIT',
+													github: 'vitejs/vite-plugin-react',
+													isMono: true
+												}
+											]}
+										>
+											{item => (
+												<TableRow key={item.name}>
+													<TableCell>{item.name}</TableCell>
+													<TableCell>{item.license}</TableCell>
+													<TableCell>
+														<Link
+															href={`https://github.com/${item.github}`}
+															target='_blank'
+															isExternal
+														>
+															{item.github}
+														</Link>
+													</TableCell>
+												</TableRow>
+											)}
+										</TableBody>
+									</Table>
+								</div>
+							</ModalBody>
+							<ModalFooter>
+								<Button onPress={close} color='warning'>
+									Close
+								</Button>
+							</ModalFooter>
+						</>
+					)}
 				</ModalContent>
 			</Modal>
 		</RootLayout>
