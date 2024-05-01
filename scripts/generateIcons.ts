@@ -9,7 +9,7 @@ await generateImages('src/icon0.png', 'dist', {
 	index: 'dist/index.html',
 	manifest: 'dist/manifest.webmanifest',
 	mstile: true,
-	padding: '5%',
+	padding: '10%',
 	scrape: true,
 	type: 'png'
 });
