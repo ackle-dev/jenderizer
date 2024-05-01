@@ -34,7 +34,7 @@ await page.emulateMediaFeatures([
 
 // Take a screenshot
 await writeFile(
-	'dist/screenshot-narrow-light.png',
+	'src/public/screenshot-narrow-light.png',
 	await page.screenshot({ type: 'png' })
 );
 
@@ -45,7 +45,7 @@ await page.emulateMediaFeatures([
 
 // Take a screenshot
 await writeFile(
-	'dist/screenshot-narrow-dark.png',
+	'src/public/screenshot-narrow-dark.png',
 	await page.screenshot({ type: 'png' })
 );
 
@@ -66,7 +66,7 @@ await page.emulateMediaFeatures([
 
 // Take a screenshot
 await writeFile(
-	'dist/screenshot-wide-light.png',
+	'src/public/screenshot-wide-light.png',
 	await page.screenshot({ type: 'png' })
 );
 
@@ -77,7 +77,7 @@ await page.emulateMediaFeatures([
 
 // Take a screenshot
 await writeFile(
-	'dist/screenshot-wide-dark.png',
+	'src/public/screenshot-wide-dark.png',
 	await page.screenshot({ type: 'png' })
 );
 

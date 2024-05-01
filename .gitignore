@@ -21,3 +21,6 @@ npm-debug.log*
 
 # typescript
 *.tsbuildinfo
+
+# screenshots
+src/public/screenshot*.png

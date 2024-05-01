@@ -24,25 +24,25 @@ export default defineConfig({
 				description: 'Random gender die rolls!',
 				screenshots: [
 					{
-						src: '/screenshot-narrow-light.png',
+						src: '/jenderizer/screenshot-narrow-light.png',
 						sizes: '412x915',
 						form_factor: 'narrow',
 						type: 'image/png'
 					},
 					{
-						src: '/screenshot-narrow-dark.png',
+						src: '/jenderizer/screenshot-narrow-dark.png',
 						sizes: '412x915',
 						form_factor: 'narrow',
 						type: 'image/png'
 					},
 					{
-						src: '/screenshot-wide-dark.png',
+						src: '/jenderizer/screenshot-wide-dark.png',
 						sizes: '1024x768',
 						form_factor: 'wide',
 						type: 'image/png'
 					},
 					{
-						src: '/screenshot-wide-light.png',
+						src: '/jenderizer/screenshot-wide-light.png',
 						sizes: '1024x768',
 						form_factor: 'wide',
 						type: 'image/png'
