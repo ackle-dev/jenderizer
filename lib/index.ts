@@ -26,7 +26,6 @@ export const Responses: string[] = [
 	'*finger guns*',
 	'I am Groot',
 	'I am a Jedi',
-	"I'm [insert Quidditch position]",
 	"I'm a mess",
 	"I'm a trainwreck, and trainwrecks don't have gender, only pain",
 	'I transcend gender',
@@ -52,5 +51,6 @@ export const Responses: string[] = [
 	'Tralse',
 	'No, but I have a coupon for that',
 	'No, but I can refer you to someone',
-	'What is this strange thing you speak of'
+	'What is this strange thing you speak of',
+	'Wheeeee'
 ];
