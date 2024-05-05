@@ -52,5 +52,8 @@ export const Responses: string[] = [
 	'No, but I have a coupon for that',
 	'No, but I can refer you to someone',
 	'What is this strange thing you speak of',
-	'Wheeeee'
+	'Wheeeee',
+	"I'm a virus",
+	'Wait, let me check my calendar',
+	"Depends, who's asking?"
 ];
